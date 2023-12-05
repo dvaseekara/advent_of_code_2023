@@ -1,6 +1,6 @@
 ## ADVENT OF CODE 2023
 
-Code repo for results from the adventofcode.com challenge.  Please don't judge the ugliness of the code herein :)
+Repo for results from the adventofcode.com challenge.  Please don't judge the ugliness of the code herein :)
 
 ### How to run
 * Solutions to each of the challenges is a standalone java application
