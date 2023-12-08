@@ -39,6 +39,12 @@ public class day3_2 {
               if(symbolHasDigitsOnBothSides(line, symbol_index)){
                 res = res + findNumberAroundIndexSameLine(line, symbol_index);
               }
+              if(lineContainsDiagonalNumbers(previousLine, symbol_index)){
+                res = res + findDiagonalNumbers(previousLine, symbol_index);                
+              }
+              if(lineContainsDiagonalNumbers(nextLine, symbol_index)){
+                res = res + findDiagonalNumbers(nextLine, symbol_index);
+              }
               if(lineContainsNumberAroundSymbol(previousLine, symbol_index)){
                 if(lineContainsNumberAroundSymbol(nextLine, symbol_index)){
                   System.out.println("LINE:  " + i);
@@ -53,6 +59,8 @@ public class day3_2 {
       } catch (IOException e) {
         e.printStackTrace();
       }
+  
+
       System.out.println("RESULT:  " + res);
   }
 
@@ -131,6 +139,33 @@ public class day3_2 {
       }
     }
     return false;
-  }            
+  }          
+  
+  
+  private static int findDiagonalNumbers(String line, int symbol_index) {
+    String firstNumber = "";
+    String secondNumber = ""; 
+
+    for(int i = symbol_index - 1; i > 0 && Character.isDigit(line.charAt(i)); i--){
+      firstNumber =  line.charAt(i) + firstNumber;
+    }
+    for(int i = symbol_index + 1; i < line.length() && Character.isDigit(line.charAt(i)); i++){
+      secondNumber = secondNumber + line.charAt(i);    
+    }
+
+    System.out.println("DIAGONAL LINE NUBMER FOUND:  " + firstNumber + "*" + secondNumber);
+    return Integer.parseInt(firstNumber) * Integer.parseInt(secondNumber);
+  }
+
+  private static boolean lineContainsDiagonalNumbers(String line, int symbol_index) {
+    if(symbol_index > line.length()-1 || symbol_index < 1){
+      return false;
+    }
+    if(line.charAt(symbol_index) == '.' && Character.isDigit(line.charAt(symbol_index-1)) && Character.isDigit(line.charAt(symbol_index + 1))){
+      return true;
+    }
+
+    return false;
+  }
 }
 
