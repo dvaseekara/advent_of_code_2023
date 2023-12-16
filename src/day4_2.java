@@ -17,9 +17,6 @@ public class day4_2 {
       int result = 0;      
       List<String> lines = Files.readAllLines(path);
 
-      //make a map of number of wins for each card
-      //parse through the map 
-
       Map<Integer,Integer> winMap = new HashMap<>();
       int i = 1;
       for(String line:lines){

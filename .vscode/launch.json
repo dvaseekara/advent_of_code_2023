@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "day8_1",
+            "request": "launch",
+            "mainClass": "day8_1",
+            "projectName": "advent_8be7bf7"
+        },
+        {
+            "type": "java",
+            "name": "day6_2",
+            "request": "launch",
+            "mainClass": "day6_2",
+            "projectName": "advent_8be7bf7"
+        },
+        {
+            "type": "java",
+            "name": "day6_1",
+            "request": "launch",
+            "mainClass": "day6_1",
+            "projectName": "advent_8be7bf7"
+        },
+        {
+            "type": "java",
             "name": "day4_2",
             "request": "launch",
             "mainClass": "day4_2",
