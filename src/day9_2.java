@@ -8,14 +8,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public class day9_1 {
+public class day9_2 {
 
   public static void main(String[] args) throws IOException {
 
       String filePath = "/home/danielvaseekaran/Documents/workspace/advent/Resources/day9_1.txt";
       Path path = Paths.get(filePath);
       List<String> lines = Files.readAllLines(path);
-      Integer result =  lines.stream().mapToInt(day9_1::findNext).sum();
+      Integer result =  lines.stream().mapToInt(day9_2::findNext).sum();
       System.out.println("RESULT:  " + result);
   }
 
@@ -34,7 +34,7 @@ public class day9_1 {
       for(int i=0; i < list.size()-1; i++){
         diffList.add(list.get(i+1) - list.get(i));
       }
-      return list.get(list.size()-1) + findNextRecursive(diffList);
+      return list.get(0) - findNextRecursive(diffList);
     }
   }
 
